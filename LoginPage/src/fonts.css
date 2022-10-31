@@ -1,0 +1,113 @@
+@font-face {
+	font-family: Shabnam_FD;
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/eot/Shabnam-Bold-FD.eot');
+	src: url('fonts/eot/Shabnam-Bold-FD.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Bold-FD.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Bold-FD.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Bold-FD.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam_FD;
+	font-style: normal;
+	font-weight: 500;
+	src: url('fonts/eot/Shabnam-Medium-FD.eot');
+	src: url('fonts/eot/Shabnam-Medium-FD.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Medium-FD.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Medium-FD.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Medium-FD.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam_FD;
+	font-style: normal;
+	font-weight: 300;
+	src: url('fonts/eot/Shabnam-Light-FD.eot');
+	src: url('fonts/eot/Shabnam-Light-FD.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Light-FD.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Light-FD.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Light-FD.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam_FD;
+	font-style: normal;
+	font-weight: 200;
+	src: url('fonts/eot/Shabnam-Thin-FD.eot');
+	src: url('fonts/eot/Shabnam-Thin-FD.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Thin-FD.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Thin-FD.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Thin-FD.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam;
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/eot/Shabnam-Bold.eot');
+	src: url('fonts/eot/Shabnam-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam;
+	font-style: normal;
+	font-weight: 500;
+	src: url('fonts/eot/Shabnam-Medium.eot');
+	src: url('fonts/eot/Shabnam-Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam;
+	font-style: normal;
+	font-weight: 300;
+	src: url('fonts/eot/Shabnam-Light.eot');
+	src: url('fonts/eot/Shabnam-Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: Shabnam;
+	font-style: normal;
+	font-weight: 200;
+	src: url('fonts/eot/Shabnam-Thin.eot');
+	src: url('fonts/eot/Shabnam-Thin.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/woff2/Shabnam-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/woff/Shabnam-Thin.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/ttf/Shabnam-Thin.ttf') format('truetype');
+}
+
+body,
+button {
+  font-family: "Shabnam_FD";
+}
+* {
+  -webkit-user-select: none;
+}
+
+/*  PREVENT TEXT SIZE SCALLING */
+
+/* iPhone, portrait & landscape. */
+@media all and (max-device-width: 480px) {
+  html,
+  body,
+  p {
+    text-size-adjust: none !important;
+    -webkit-text-size-adjust: none !important;
+    -moz-text-size-adjust: none !important;
+    -ms-text-size-adjust: none !important;
+  }
+}
+/* iPad, portrait & landscape. */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
+  html,
+  body,
+  p {
+    text-size-adjust: none !important;
+    -webkit-text-size-adjust: none !important;
+    -moz-text-size-adjust: none !important;
+    -ms-text-size-adjust: none !important;
+  }
+}
