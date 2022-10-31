@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import {validate} from './validate.js';
 const SignUp = () => {
   const [data, setData] = useState({
     name: "",
@@ -16,10 +16,13 @@ const SignUp = () => {
     }
     console.log(data);
   };
+  const [errors, setErrors] = useState({});
   const inputName = useRef(null);
   useEffect(() => {
     inputName.current.focus();
-  }, []);
+    setErrors(validate(data))
+    console.log(errors);
+  }, [data]);
   return (
     <div className="w-1/3 flex flex-col bg-white text-slate-800 p-5 rounded-lg">
       <p className="text-sky-800 font-bold text-xl my-3">ثبت نام</p>
