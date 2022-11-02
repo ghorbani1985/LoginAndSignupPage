@@ -15,7 +15,7 @@ export const validate = data => {
     if(!data.password.trim()){
         errors.password = "کاربر گرامی ورود کلمه عبور اجباری می باشد.";
     }else if (data.password.length <= 7) {
-         errors.password = "کاربر گرامی برای کلمه عبور حداقل ۸ کاراکتر وارد نمایید..";
+         errors.password = "کاربر گرامی برای کلمه عبور حداقل ۸ کاراکتر وارد نمایید.";
     }else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])/.test(data.password)){
          errors.password = "کاربر گرامی کلمه عبور باید شامل حروف [a-z],[A-Z],[0-9],[!@#$%^&*_=+-] باشد.";
     } else {

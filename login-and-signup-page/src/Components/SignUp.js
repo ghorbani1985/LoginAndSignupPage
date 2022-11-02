@@ -3,6 +3,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notify } from './toast';
 import { validate } from './validate.js';
+import eye from './../assets/images/svg/eye.svg'
+import eyeSlash from './../assets/images/svg/eyeSlash.svg'
 const SignUp = () => {
   const [data, setData] = useState({
     name: "",
@@ -50,14 +52,19 @@ const SignUp = () => {
   useEffect(() => {
     setErrors(validate(data))
   }, [data, touched]);
+  /* show password */
+  const [passwordShown, setPasswordShown] = useState(false);
+    const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
   return (
-    <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col bg-[#F6FBF9] text-slate-800 p-5 rounded-2xl shadow-lg z-10">
+    <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col bg-[#F6FBF9] text-sky-800 p-5 rounded-2xl shadow-lg z-10">
       <p className="text-sky-800 flex justify-center items-center font-bold text-2xl my-3">
         ایجاد حساب کاربری
       </p>
       <form onSubmit={submitHandler}>
         <div className="my-4">
-          <label>نام</label>
+          <label>نام و نام خانوادگی</label>
           <input
             className={
               errors.name && touched.name
@@ -66,6 +73,7 @@ const SignUp = () => {
             }
             type="text"
             name="name"
+            placeholder="لطفا نام کامل خود را وارد نمایید"
             value={data.name}
             onChange={changeHandler}
             onFocus={focusHandler}
@@ -86,6 +94,7 @@ const SignUp = () => {
             }
             type="text"
             name="email"
+            placeholder="لطفا ایمیل خود را وارد نمایید"
             value={data.email}
             onChange={changeHandler}
             onFocus={focusHandler}
@@ -98,18 +107,36 @@ const SignUp = () => {
         </div>
         <div className="my-4">
           <label>کلمه عبور</label>
-          <input
-            className={
-              errors.password && touched.password
-                ? "focus:outline-red-300 focus:ring-red-500 font-['Shabnam']"
-                : "focus:outline-green-300 focus:ring-green-500 font-['Shabnam']"
-            }
-            type="password"
-            name="password"
-            value={data.password}
-            onChange={changeHandler}
-            onFocus={focusHandler}
-          />
+          <div className="relative">
+            <input
+              className={
+                errors.password && touched.password
+                  ? "focus:outline-red-300 focus:ring-red-500 pl-9 font-['Shabnam']"
+                  : "focus:outline-green-300 focus:ring-green-500 pl-9 font-['Shabnam']"
+              }
+              type={passwordShown ? "text" : "password"}
+              name="password"
+              placeholder="لطفا کلمه عبور انتخابی را وارد نمایید"
+              value={data.password}
+              onChange={changeHandler}
+              onFocus={focusHandler}
+            />
+            {passwordShown ? (
+              <img
+                src={eyeSlash}
+                alt="eyeSlash"
+                onClick={togglePassword}
+                className="w-6 h-6 absolute top-[0.65rem] left-2"
+              />
+            ) : (
+              <img
+                src={eye}
+                alt="eye"
+                onClick={togglePassword}
+                className="w-6 h-6 absolute top-[0.65rem] left-2"
+              />
+            )}
+          </div>
           {errors.password && touched.password && (
             <p className="font-['Shabnam'] mt-2 bg-red-200 text-red-500 text-sm p-2 rounded-lg border-r-4 border-r-red-700 border-solid">
               {errors.password}
@@ -126,6 +153,7 @@ const SignUp = () => {
             }
             type="password"
             name="confirmPassword"
+            placeholder="لطفا کلمه عبور را مجددا وارد نمایید"
             value={data.confirmPassword}
             onChange={changeHandler}
             onFocus={focusHandler}
@@ -168,7 +196,7 @@ const SignUp = () => {
           <p>الان حساب کاربری دارید؟ </p>
           <a
             href="#"
-            className="text-sky-700 mr-2 transition-all ease-in-out duration-500 hover:text-sky-500"
+            className="text-sky-500 mr-2 transition-all ease-in-out duration-500 hover:text-sky-800"
           >
             ورود
           </a>
