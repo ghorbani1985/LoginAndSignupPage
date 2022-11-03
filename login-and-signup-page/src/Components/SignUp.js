@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import useTitle from "./../Hooks/useTitle";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from 'react-router-dom';
 import { notify } from './toast';
 import { validate } from './validate.js';
 import eye from './../assets/images/svg/eye.svg'
 import eyeSlash from './../assets/images/svg/eyeSlash.svg'
 const SignUp = () => {
+    useTitle("ایجاد حساب کاربری جدید");
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -50,7 +53,7 @@ const SignUp = () => {
     dark: "bg-white-600 font-gray-300",
   };
   useEffect(() => {
-    setErrors(validate(data))
+    setErrors(validate(data, "signUp"))
   }, [data, touched]);
   /* show password */
   const [passwordShown, setPasswordShown] = useState(false);
@@ -193,13 +196,11 @@ const SignUp = () => {
           </button>
         </div>
         <div className="flex justify-center items-center my-4">
-          <p>الان حساب کاربری دارید؟ </p>
-          <a
-            href="#"
-            className="text-sky-500 mr-2 transition-all ease-in-out duration-500 hover:text-sky-800"
-          >
+          <p> حساب کاربری دارید؟ </p>
+          <Link to="/login"
+            className="text-sky-500 mr-2 transition-all ease-in-out duration-500 hover:text-sky-800">
             ورود
-          </a>
+          </Link>
         </div>
       </form>
       <ToastContainer
